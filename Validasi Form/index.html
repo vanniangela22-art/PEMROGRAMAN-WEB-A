@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- progress bar pengisian -->
+    <div class="progress-box">
+        <div class="progress-teks">Progress pengisian: <span id="persen">0</span>%</div>
+        <div class="progress-luar">
+            <div class="progress-dalam" id="barProgress"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>FORMULIR PENDAFTARAN MAHASISWA BARU</h1>
+        <p class="sub">Tahun Akademik 2026/2027</p>
+        <p class="ket">Tanda <span class="bintang">*</span> wajib diisi</p>
+
+        <form id="formDaftar" novalidate>
+
+            <!-- A. DATA PRIBADI -->
+            <h2>A. Data Pribadi</h2>
+
+            <div class="baris">
+                <label for="nama">Nama Lengkap <span class="bintang">*</span></label>
+                <input type="text" id="nama" placeholder="Sesuai ijazah">
+                <span class="error" id="err-nama"></span>
+            </div>
+
+            <div class="baris">
+                <label>Jenis Kelamin <span class="bintang">*</span></label>
+                <div class="pilihan">
+                    <label><input type="radio" name="jk" value="Laki-laki"> Laki-laki</label>
+                    <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
+                </div>
+                <span class="error" id="err-jk"></span>
+            </div>
+
+            <div class="baris">
+                <label for="tempatLahir">Tempat Lahir <span class="bintang">*</span></label>
+                <input type="text" id="tempatLahir">
+                <span class="error" id="err-tempatLahir"></span>
+            </div>
+
+            <div class="baris">
+                <label for="tglLahir">Tanggal Lahir <span class="bintang">*</span></label>
+                <input type="date" id="tglLahir">
+                <span class="info" id="umurTampil"></span>
+                <span class="error" id="err-tglLahir"></span>
+            </div>
+
+            <div class="baris">
+                <label for="agama">Agama <span class="bintang">*</span></label>
+                <select id="agama">
+                    <option value="">-- Pilih Agama --</option>
+                    <option>Islam</option>
+                    <option>Kristen Protestan</option>
+                    <option>Katolik</option>
+                    <option>Hindu</option>
+                    <option>Buddha</option>
+                    <option>Konghucu</option>
+                </select>
+                <span class="error" id="err-agama"></span>
+            </div>
+
+            <div class="baris">
+                <label for="nik">NIK (No. KTP) <span class="bintang">*</span></label>
+                <input type="text" id="nik" maxlength="16" placeholder="16 digit angka">
+                <span class="error" id="err-nik"></span>
+            </div>
+
+            <div class="baris">
+                <label for="warga">Kewarganegaraan <span class="bintang">*</span></label>
+                <select id="warga">
+                    <option value="">-- Pilih --</option>
+                    <option>WNI</option>
+                    <option>WNA</option>
+                </select>
+                <span class="error" id="err-warga"></span>
+            </div>
+
+            <div class="baris">
+                <label for="foto">Pas Foto <span class="bintang">*</span></label>
+                <input type="file" id="foto" accept=".jpg,.jpeg,.png">
+                <span class="info">Format JPG/PNG, maksimal 2 MB</span>
+                <img id="previewFoto" class="preview" alt="Preview foto">
+                <span class="error" id="err-foto"></span>
+            </div>
+
+            <!-- B. ALAMAT -->
+            <h2>B. Alamat</h2>
+
+            <div class="baris">
+                <label for="jalan">Jalan / Dusun <span class="bintang">*</span></label>
+                <input type="text" id="jalan">
+                <span class="error" id="err-jalan"></span>
+            </div>
+
+            <div class="dua-kolom">
+                <div class="baris">
+                    <label for="rt">RT <span class="bintang">*</span></label>
+                    <input type="text" id="rt" maxlength="3">
+                    <span class="error" id="err-rt"></span>
+                </div>
+                <div class="baris">
+                    <label for="rw">RW <span class="bintang">*</span></label>
+                    <input type="text" id="rw" maxlength="3">
+                    <span class="error" id="err-rw"></span>
+                </div>
+            </div>
+
+            <div class="baris">
+                <label for="kelurahan">Kelurahan / Desa <span class="bintang">*</span></label>
+                <input type="text" id="kelurahan">
+                <span class="error" id="err-kelurahan"></span>
+            </div>
+
+            <div class="baris">
+                <label for="kecamatan">Kecamatan <span class="bintang">*</span></label>
+                <input type="text" id="kecamatan">
+                <span class="error" id="err-kecamatan"></span>
+            </div>
+
+            <div class="baris">
+                <label for="kota">Kabupaten / Kota <span class="bintang">*</span></label>
+                <input type="text" id="kota">
+                <span class="error" id="err-kota"></span>
+            </div>
+
+            <div class="baris">
+                <label for="kodePos">Kode Pos <span class="bintang">*</span></label>
+                <input type="text" id="kodePos" maxlength="5">
+                <span class="error" id="err-kodePos"></span>
+            </div>
+
+            <div class="baris">
+                <label for="tinggal">Jenis Tinggal <span class="bintang">*</span></label>
+                <select id="tinggal">
+                    <option value="">-- Pilih --</option>
+                    <option>Bersama Orang Tua</option>
+                    <option>Wali</option>
+                    <option>Kost</option>
+                    <option>Asrama</option>
+                    <option>Panti Asuhan</option>
+                    <option>Lainnya</option>
+                </select>
+                <span class="error" id="err-tinggal"></span>
+            </div>
+
+            <!-- muncul kalau pilih Lainnya -->
+            <div class="baris" id="boxTinggalLain" style="display: none;">
+                <label for="tinggalLain">Sebutkan <span class="bintang">*</span></label>
+                <input type="text" id="tinggalLain">
+                <span class="error" id="err-tinggalLain"></span>
+            </div>
+
+            <div class="baris">
+                <label for="hp">No. Telepon / HP <span class="bintang">*</span></label>
+                <input type="text" id="hp" placeholder="Contoh: 081234567890">
+                <span class="error" id="err-hp"></span>
+            </div>
+
+            <div class="baris">
+                <label for="email">Email <span class="bintang">*</span></label>
+                <input type="email" id="email" placeholder="nama@email.com">
+                <span class="error" id="err-email"></span>
+            </div>
+
+            <!-- C. SEKOLAH ASAL -->
+            <h2>C. Data Sekolah Asal</h2>
+
+            <div class="baris">
+                <label for="sekolah">Nama Sekolah <span class="bintang">*</span></label>
+                <input type="text" id="sekolah">
+                <span class="error" id="err-sekolah"></span>
+            </div>
+
+            <div class="baris">
+                <label for="jurusan">Jurusan <span class="bintang">*</span></label>
+                <select id="jurusan">
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option>IPA</option>
+                    <option>IPS</option>
+                    <option>Bahasa</option>
+                    <option>SMK</option>
+                </select>
+                <span class="error" id="err-jurusan"></span>
+            </div>
+
+            <div class="baris">
+                <label for="nisn">NISN <span class="bintang">*</span></label>
+                <input type="text" id="nisn" maxlength="10" placeholder="10 digit angka">
+                <span class="error" id="err-nisn"></span>
+            </div>
+
+            <div class="baris">
+                <label for="thLulus">Tahun Lulus <span class="bintang">*</span></label>
+                <input type="text" id="thLulus" maxlength="4" placeholder="Contoh: 2026">
+                <span class="error" id="err-thLulus"></span>
+            </div>
+
+            <!-- D. ORANG TUA -->
+            <h2>D. Data Orang Tua / Wali</h2>
+
+            <div class="baris">
+                <label for="namaAyah">Nama Ayah <span class="bintang">*</span></label>
+                <input type="text" id="namaAyah">
+                <span class="error" id="err-namaAyah"></span>
+            </div>
+
+            <div class="baris">
+                <label for="kerjaAyah">Pekerjaan Ayah <span class="bintang">*</span></label>
+                <input type="text" id="kerjaAyah">
+                <span class="error" id="err-kerjaAyah"></span>
+            </div>
+
+            <div class="baris">
+                <label for="namaIbu">Nama Ibu <span class="bintang">*</span></label>
+                <input type="text" id="namaIbu">
+                <span class="error" id="err-namaIbu"></span>
+            </div>
+
+            <div class="baris">
+                <label for="kerjaIbu">Pekerjaan Ibu <span class="bintang">*</span></label>
+                <input type="text" id="kerjaIbu">
+                <span class="error" id="err-kerjaIbu"></span>
+            </div>
+
+            <div class="baris">
+                <label for="hpOrtu">No. HP Orang Tua / Wali <span class="bintang">*</span></label>
+                <input type="text" id="hpOrtu">
+                <span class="error" id="err-hpOrtu"></span>
+            </div>
+
+            <!-- E. PILIHAN PRODI -->
+            <h2>E. Pilihan Program Studi</h2>
+
+            <div class="baris">
+                <label for="prodi1">Pilihan 1 <span class="bintang">*</span></label>
+                <select id="prodi1">
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option>Informatika</option>
+                    <option>Teknik Elektro</option>
+                    <option>Teknik Mesin</option>
+                    <option>Teknik Industri</option>
+                    <option>Farmasi</option>
+                    <option>Psikologi</option>
+                    <option>Manajemen</option>
+                    <option>Akuntansi</option>
+                    <option>Sastra Inggris</option>
+                    <option>Pendidikan Matematika</option>
+                </select>
+                <span class="error" id="err-prodi1"></span>
+            </div>
+
+            <div class="baris">
+                <label for="prodi2">Pilihan 2 <span class="bintang">*</span></label>
+                <select id="prodi2">
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option>Informatika</option>
+                    <option>Teknik Elektro</option>
+                    <option>Teknik Mesin</option>
+                    <option>Teknik Industri</option>
+                    <option>Farmasi</option>
+                    <option>Psikologi</option>
+                    <option>Manajemen</option>
+                    <option>Akuntansi</option>
+                    <option>Sastra Inggris</option>
+                    <option>Pendidikan Matematika</option>
+                </select>
+                <span class="error" id="err-prodi2"></span>
+            </div>
+
+            <div class="baris">
+                <label for="motivasi">Alasan Memilih Program Studi <span class="bintang">*</span></label>
+                <textarea id="motivasi" rows="4" maxlength="200" placeholder="Minimal 20 karakter"></textarea>
+                <span class="info"><span id="hitungMotivasi">0</span>/200 karakter</span>
+                <span class="error" id="err-motivasi"></span>
+            </div>
+
+            <!-- F. PERNYATAAN -->
+            <h2>F. Pernyataan</h2>
+
+            <div class="baris">
+                <label class="setuju">
+                    <input type="checkbox" id="setuju">
+                    Saya menyatakan bahwa data yang saya isi adalah benar.
+                </label>
+                <span class="error" id="err-setuju"></span>
+            </div>
+
+            <div class="tombol">
+                <button type="submit">Kirim</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- popup ringkasan data -->
+    <div class="modal" id="modal">
+        <div class="modal-isi">
+            <h3>Ringkasan Data Pendaftaran</h3>
+            <p>Silakan cek lagi data kamu sebelum dikirim.</p>
+            <table id="tabelRingkasan"></table>
+            <div class="tombol">
+                <button type="button" id="btnEdit">Edit Lagi</button>
+                <button type="button" id="btnKirim">Kirim Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
