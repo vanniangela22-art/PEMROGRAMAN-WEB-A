@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0 20px 20px 20px;
+}
+
+/* progress bar */
+.progress-box {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+.progress-teks {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.progress-luar {
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-dalam {
+    background-color: #8b1a1a;
+    height: 10px;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.sub {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.ket {
+    font-size: 13px;
+    color: #555;
+}
+
+h2 {
+    font-size: 17px;
+    background-color: #8b1a1a;
+    color: white;
+    padding: 8px 12px;
+    margin-top: 25px;
+}
+
+.baris {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.baris > label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+input.salah,
+select.salah,
+textarea.salah {
+    border-color: red;
+    background-color: #fff0f0;
+}
+
+.pilihan label {
+    font-weight: normal;
+    margin-right: 20px;
+}
+
+.dua-kolom {
+    display: flex;
+    gap: 15px;
+}
+
+.dua-kolom .baris {
+    flex: 1;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+    min-height: 14px;
+}
+
+.info {
+    font-size: 12px;
+    color: #555;
+    margin-top: 3px;
+}
+
+.preview {
+    display: none;
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    border: 1px solid #aaa;
+    margin-top: 6px;
+}
+
+.bintang {
+    color: red;
+}
+
+.setuju {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.tombol {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 28px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    background-color: #ccc;
+}
+
+button[type="submit"],
+#btnKirim {
+    background-color: #8b1a1a;
+    color: white;
+}
+
+/* popup ringkasan */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal.tampil {
+    display: block;
+}
+
+.modal-isi {
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 25px;
+    border-radius: 6px;
+}
+
+.modal-isi h3 {
+    margin-top: 0;
+}
+
+#tabelRingkasan {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#tabelRingkasan td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    vertical-align: top;
+}
+
+#tabelRingkasan td:first-child {
+    width: 40%;
+    font-weight: bold;
+    background-color: #f7f7f7;
+}
