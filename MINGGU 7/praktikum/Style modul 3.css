@@ -1,0 +1,218 @@
+/* reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #222222;
+}
+
+h2 {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* ===== HEADER (Flexbox) ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 24px;
+  background-color: #1f4e78;
+  color: white;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+header figure {
+  text-align: center;
+}
+header figcaption {
+  font-size: 12px;
+  max-width: 120px;
+}
+.profile-img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== TOMBOL TOGGLE ASIDE ===== */
+#tombol-aside {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: #1f4e78;
+  cursor: pointer;
+}
+.sembunyi {
+  display: none;
+}
+
+/* ===== MAIN & ASIDE (Flexbox) ===== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.konten-utama > article {
+  margin-bottom: 24px;
+}
+aside {
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 8px;
+}
+aside h2 {
+  font-size: 18px;
+}
+aside ul, aside ol {
+  padding-left: 20px;
+}
+aside ul {
+  margin-bottom: 16px;
+}
+
+/* ===== TABEL DATA DIRI ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+td {
+  overflow-wrap: anywhere;
+}
+th {
+  background-color: #e9ecef;
+}
+
+/* ===== PORTOFOLIO (CSS Grid) ===== */
+.daftar-artikel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.daftar-artikel article {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+.daftar-artikel img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.daftar-artikel h3 {
+  margin-bottom: 4px;
+}
+#tentang-saya h3 {
+  margin-top: 14px;
+  margin-bottom: 2px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+  color: #777;
+}
+
+/* ===== MEDIA QUERY (mobile-first) ===== */
+@media (min-width: 768px) {
+  .daftar-artikel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  main > section { flex: 3; }
+  main > aside   { flex: 1; }
+}
+@media (min-width: 992px) {
+  .daftar-artikel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== KOMENTAR ===== */
+#komentar {
+  margin-top: 24px;
+}
+#form-komentar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+#form-komentar input,
+#form-komentar textarea {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font: inherit;
+}
+#form-komentar button {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border: 1px solid #888;
+  border-radius: 6px;
+  background-color: #f2f2f2;
+  font: inherit;
+  cursor: pointer;
+}
+#daftar-komentar {
+  list-style: none;
+}
+#daftar-komentar li {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.btn-hapus {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid #c0392b;
+  border-radius: 6px;
+  background-color: #c0392b;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Diri - Angela (Semantic)</title>
+    <link rel="stylesheet" href="Style modul 3.css">
+</head>
+<body>
+
+    <!-- 
+        ========================================
+        HEADER (Bagian Kepala)
+        Fungsi: Mewadahi konten pengantar atau identitas utama halaman,
+        seperti judul web, menu navigasi, dan foto profil.
+        ========================================
+    -->
+    <header>
+        <h1>Profil Diri</h1>
+        <!-- NAV berisi menu yang menuju ke bagian-bagian halaman -->
+        <nav>
+            <ul>
+                <li><a href="#data-diri">Data Diri</a></li>
+                <li><a href="#tentang-saya">Tentang Saya</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+            </ul>
+        </nav>
+        <!-- Tombol untuk menampilkan/menyembunyikan aside (disimpan di localStorage) -->
+        <button id="tombol-aside" type="button">Sembunyikan Aside</button>
+        <figure>
+            <img src="foto.jpg.jpg" alt="Foto Profil Angela Giovanni Permata Putri" class="profile-img">
+            <figcaption>Foto profil Angela Giovanni Permata Putri</figcaption>
+        </figure>
+    </header>
+
+    <!-- 
+        ========================================
+        MAIN (Konten Utama)
+        Fungsi: Mewadahi konten inti atau pusat dari halaman web.
+        Isinya SECTION (konten utama) dan ASIDE (sampingan) yang
+        ditata berdampingan pada layar lebar.
+        ========================================
+    -->
+    <main>
+        <section class="konten-utama">
+            <!-- 
+                ========================================
+                ARTICLE 1 (Artikel 1)
+                Fungsi: Mewadahi konten yang berdiri sendiri dan bisa dipahami
+                secara utuh, seperti Data Diri yang spesifik.
+                ========================================
+            -->
+            <article id="data-diri">
+                <h2>Data Diri</h2>
+                <!-- Tag TABLE digunakan karena data ini bersifat tabular -->
+                <table>
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <td>Angela Giovanni Permata Putri</td>
+                    </tr>
+                    <tr>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <td>Boyolali, 2 Februari 2007</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat</th>
+                        <td>Nglayut RT 20 RW 4 Dlingo Mojosongo Boyolali</td>
+                    </tr>
+                    <tr>
+                        <th>Universitas</th>
+                        <td>Universitas Sanata Dharma</td>
+                    </tr>
+                    <tr>
+                        <th>Jurusan</th>
+                        <td>Informatika</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>angelagiovann02@gmail.com</td>
+                    </tr>
+                </table>
+            </article>
+
+            <!-- 
+                ========================================
+                ARTICLE 2 (Artikel 2)
+                Fungsi: Mewadahi bagian konten lain yang berdiri sendiri,
+                yaitu teks deskripsi "Tentang Saya".
+                ========================================
+            -->
+            <article id="tentang-saya">
+                <h2>Tentang Saya</h2>
+                <p>
+                    Saya adalah mahasiswa Informatika semester 3. Kesibukan saya setiap hari adalah
+                    belajar di kampus dan mengerjakan tugas. Saya adalah orang yang introvert dan
+                    tidak memiliki banyak teman, tapi saya tetap bertanggung jawab dan berkontribusi
+                    dalam kerja tim.
+                </p>
+
+                <h3>Seni</h3>
+                <p>
+                    Saya sangat suka seni. Bagi saya seni adalah cara untuk mengekspresikan diri,
+                    dan apapun yang berhubungan dengan seni selalu menarik perhatian saya. Saya juga
+                    sudah membuat cukup banyak karya seni, seperti lukisan, yang bisa dilihat di
+                    bagian Portofolio.
+                </p>
+
+                <h3>Cosplay</h3>
+                <p>
+                    Saya hobi cosplay dan menjadi cosplayer anime. Lewat cosplay saya bisa menjadi
+                    karakter dari anime dan menuangkan kreativitas lewat kostum dan penampilan.
+                </p>
+
+                <h3>Gamers</h3>
+                <p>
+                    Saya juga seorang gamer. Game yang saya mainkan adalah Mobile Legends, dan
+                    skill bermain saya cukup bagus. Saya menikmati serunya bermain bersama tim.
+                </p>
+
+                <h3>Membaca</h3>
+                <p>
+                    Saya suka membaca. Saya memiliki banyak buku novel dan buku-buku lainnya.
+                    Membaca membuat saya bisa menikmati cerita sekaligus menambah wawasan.
+                </p>
+
+                <h3>Makeup</h3>
+                <p>
+                    Saya suka makeup dan skill saya di bidang ini cukup baik. Bagi saya makeup
+                    juga termasuk seni, karena wajah bisa menjadi kanvas untuk berkreasi.
+                </p>
+            </article>
+
+            <!-- 
+                ========================================
+                PORTOFOLIO
+                Fungsi: Kumpulan karya (lukisan, cosplay, game, makeup) dalam bentuk kartu. Ditata pakai CSS Grid
+                (1 kolom di mobile, 2 kolom di tablet, 3 kolom di desktop).
+                ========================================
+            -->
+            <h2 id="portofolio">Portofolio</h2>
+            <section class="daftar-artikel">
+                <article>
+                    <img src="gambar/lukisan-1.jpg" alt="Lukisan Monkey D. Luffy dari One Piece karya Angela">
+                    <h3>Lukisan Luffy</h3>
+                    <p>Lukisan karakter Monkey D. Luffy dari anime One Piece.</p>
+                </article>
+                <article>
+                    <img src="gambar/lukisan-2.jpg" alt="Lukisan pemandangan kota dan lampion karya Angela">
+                    <h3>Kota dan Lampion</h3>
+                    <p>Lukisan pemandangan kota dengan lampion di langit.</p>
+                </article>
+                <article>
+                    <img src="gambar/lukisan-3.jpg" alt="Lukisan Nanami Kento dari Jujutsu Kaisen karya Angela">
+                    <h3>Lukisan Nanami Kento</h3>
+                    <p>Lukisan karakter Nanami Kento dari anime Jujutsu Kaisen.</p>
+                </article>
+                <article>
+                    <img src="gambar/cosplay-1.jpg" alt="Angela cosplay menjadi Misa Amane dari Death Note">
+                    <h3>Cosplay Misa Amane</h3>
+                    <p>Saya cosplay menjadi Misa Amane dari anime Death Note.</p>
+                </article>
+                <article>
+                    <img src="gambar/screenshot-game-1.jpg" alt="Screenshot riwayat pertandingan Mobile Legends dengan hero Carmilla">
+                    <h3>Mobile Legends - Carmilla</h3>
+                    <p>Tangkapan layar riwayat pertandingan Mobile Legends dengan hero Carmilla yang berhasil saya menangkan.</p>
+                </article>
+                <article>
+                    <img src="gambar/makeup-1.jpg" alt="Hasil Douyin makeup Angela">
+                    <h3>Douyin Makeup</h3>
+                    <p>Hasil makeup saya dengan gaya Douyin.</p>
+                </article>
+            </section>
+
+            <!-- 
+                ========================================
+                KOMENTAR
+                Fungsi: Form untuk menulis komentar. Daftar komentar dirender
+                oleh script dari data di localStorage. Isi form yang belum
+                terkirim disimpan sementara di sessionStorage.
+                ========================================
+            -->
+            <h2 id="komentar">Komentar</h2>
+            <form id="form-komentar">
+                <input type="text" id="input-nama" placeholder="Nama kamu">
+                <textarea id="input-pesan" rows="3" placeholder="Tulis komentar..."></textarea>
+                <button type="submit">Kirim Komentar</button>
+            </form>
+            <ul id="daftar-komentar"></ul>
+
+        </section>
+
+        <!-- 
+            ========================================
+            ASIDE (Sampingan)
+            Fungsi: Mewadahi konten yang terkait dengan konten utama (main)
+            tetapi bisa dipisahkan darinya, contohnya Hobi dan Riwayat Pendidikan.
+            ========================================
+        -->
+        <aside id="aside-info">
+            <h2>Hobi</h2>
+            <ul>
+                <li>Menggambar / Melukis</li>
+                <li>Cosplay</li>
+                <li>Game (Mobile Legends)</li>
+                <li>Membaca</li>
+                <li>Makeup</li>
+            </ul>
+
+            <h2>Riwayat Pendidikan</h2>
+            <ol>
+                <li>SD Santo Fransiskus</li>
+                <li>SMPN 3 Mojosongo</li>
+                <li>SMAN 3 Boyolali</li>
+                <li>Universitas Sanata Dharma (sekarang)</li>
+            </ol>
+        </aside>
+    </main>
+
+    <!-- 
+        ========================================
+        FOOTER (Bagian Kaki)
+        Fungsi: Mewadahi informasi penutup halaman, seperti hak cipta
+        (copyright) atau kontak.
+        ========================================
+    -->
+    <footer>
+        <p>&copy; 2025 Angela Giovanni Permata Putri</p>
+    </footer>
+
+    <script src="script modul 3.js"></script>
+</body>
+</html>
