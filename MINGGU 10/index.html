@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Konsumsi REST API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Blog Saya</h1>
+  </header>
+
+  <main>
+    <article>
+      <h2>Belajar Fetch API</h2>
+      <p>
+        Fetch API dipakai untuk berkomunikasi dengan server. Selain mengambil data (GET),
+        kita juga bisa mengirim (POST), memperbarui (PATCH), dan menghapus (DELETE) data.
+      </p>
+      <button id="tombolLike">Like (<span id="jumlahLike">0</span>)</button>
+    </article>
+
+    <section>
+      <h3>Komentar</h3>
+
+      <form id="formKomentar">
+        <input type="text" id="inputNama" placeholder="Nama kamu">
+        <textarea id="inputPesan" rows="3" placeholder="Tulis komentar..."></textarea>
+        <div class="baris-tombol">
+          <button type="submit" id="tombolKirim">Kirim Komentar</button>
+          <button type="button" id="tombolBatal" hidden>Batal Edit</button>
+        </div>
+      </form>
+
+      <ul id="daftarKomentar"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
